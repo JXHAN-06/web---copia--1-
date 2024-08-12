@@ -1,0 +1,140 @@
+*{
+box-sizing: border-box;
+}
+body{
+    background-color: white;
+  }
+  nav{
+    background-color:  #A9CF82;
+  }
+  .d-flex{
+    
+      margin: 2px 0px 0px 0px ;
+    
+  }
+  .direc{
+    color: black;
+    text-decoration: none;
+    
+   
+  }
+  .bandera, .globo{
+    margin: 15px 0px 0px 0px ;
+    color: black;
+  }
+  .pais{
+   text-decoration: none;
+   color: black;
+   margin:  20px 0px 0px 0px;
+   
+  }
+  .carrit{
+    margin: 15px 20px 0px 15px ; 
+    color: black;
+  
+  }
+  .campan{
+    margin: 15px 0px 0px 10px ; 
+    color: black;
+  }
+  .persona{
+    margin: 20px 0px 0px 10px ; 
+    color: black;
+  }
+  .inicio{
+    text-decoration: none; 
+    color: black;
+  }
+  .ingresar{
+    margin: 20px 0px 0px 10px ; 
+  }
+
+ .regreso{
+    margin: 5px 0px 0px 20px;
+ }
+ .comienzo{
+    text-decoration: none;
+    color: #020202;
+
+ }
+ .comienzo:hover{
+    color: #85929E;
+ }
+ 
+.fav {
+  font-size: 25px;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.car {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.cesta {
+  font-size: 30px;
+  font-weight: bold;
+  color: #020202;
+  margin-top: 20px;
+}
+
+.agre {
+  font-size: 14px;
+  color: #555;
+}
+
+.comp {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #A9CF82;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.comp:hover {
+  background-color: #020202;
+}
+   footer {
+      background-color: #A9CF82;
+      color: black;
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    .pie {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      
+    }
+    
+    .pie ul {
+      list-style-type: none;
+      margin-bottom: 20px;
+    }
+    
+    .pie ul li {
+      margin-bottom: 10px;
+    }
+    
+    .termi {
+      margin-top: 20px;
+    }
+    
+    .termi small {
+      color: black;
+    }
+    
+    .termi small a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .termi small a:hover {
+      text-decoration: underline;
+    }
+  

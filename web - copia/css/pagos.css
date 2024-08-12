@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav {
+  background-color: #A9CF82;
+}
+
+.d-flex {
+  margin: 2px 0px 0px 0px;
+}
+
+.direc {
+  color: black;
+  text-decoration: none;
+}
+
+.bandera, .globo {
+  margin: 15px 0px 0px 0px;
+  color: black;
+}
+
+.pais {
+  text-decoration: none;
+  color: black;
+  margin: 20px 0px 0px 0px;
+}
+
+.carrit {
+  margin: 15px 20px 0px 15px;
+  color: black;
+}
+
+.campan {
+  margin: 15px 0px 0px 10px;
+  color: black;
+}
+
+
+
+.ingresar {
+  margin: 20px 0px 0px 10px;
+}
+
+.regreso {
+  margin: 5px 0px 0px 20px;
+}
+
+.comienzo {
+  text-decoration: none;
+  color: #020202;
+}
+
+.comienzo:hover {
+  color: #85929E;
+}
+
+.tit {
+  
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 0;
+  border-radius: 8px;
+  max-width: 80%; /* Ajusta esto según sea necesario */
+  display: flex;
+  justify-content: left;
+}
+
+.titulo {
+  padding: 10px 20px;
+  font-size: 30px;
+  position: relative;
+}
+section{
+  width: 60%;
+  height: 700px;
+  background: #fff;
+  margin: 40px auto;
+  border: 2px solid #fff;
+  box-shadow: 0 15px 40px rgba(0,0,0, 0.5);
+}
+
+.panel-izquierdo{
+  float: left;
+  width: 50%;
+  height: 500px;
+  background-size: cover;
+}
+
+.panel-derecho{
+  float: right;
+  width: 50%;
+  height: 500px;
+}
+.boto{
+
+  list-style-type: none;
+  margin: 0;
+  padding: 25px 0px 10px 0px;
+  display: flex; /* Cambiamos a flexbox para alinear elementos */
+  justify-content: left; 
+  font-weight: bold;
+
+}
+.tar{
+margin: 0px 40px;
+background-color: #F7940E;
+text-decoration: none;
+color: #fff;
+font-weight: bold;
+padding: 10px 10px;
+border-radius: 5px;
+}
+.pay{
+margin: 0px 0px;
+background-color: #B7B6B6;
+text-decoration: none;
+color: #fff;
+padding: 10px 10px;
+border-radius: 5px;
+}
+
+.subtit{
+  font-size: 15px;
+  padding: 10px 0 5px 15px;
+  margin: 0px 5px ;
+  color: #71B5C6;
+  text-transform: uppercase;
+  background-color: #fff;
+  font-weight: bold;
+
+}
+.segur{
+font-size: 15px;
+padding: 0px 0 5px 10px;
+margin: 0px 30px ;
+color:#A0A086;
+}
+.credito{
+list-style-type: none;
+  margin: 0px 30px;
+  padding: 25px 0px 10px 0px;
+  display: flex; /* Cambiamos a flexbox para alinear elementos */
+  justify-content: left; 
+  font-weight: bold;
+}
+.spn{
+font-size: 10px;
+color:#A0A086 ;
+
+}
+.visa , .maste , .american{
+margin: 0px 10px;
+
+}
+
+form{
+  padding: 20px 40px;
+}
+
+form label{
+  color: black;
+  font-weight: bold;
+}
+
+form .titular,.caja,.caj,.caji,.formula,.completar{
+  margin: 10px 0 20px 0;
+}
+
+form input[type="text"], form input[class="caja"]{
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+
+form input[type="text"]:focus, form input[class="caja"]:focus{
+  border-bottom: 2px solid #262626;
+}
+form input[class="caj"]{
+width: 50px;
+}
+form input[class="caj"]:focus{
+width: 15%;
+}
+.codigo{
+margin: 0px 37px;
+}
+.caji{
+margin: 0px 81px;
+}
+form input[class="caji"]{
+width: 50px;
+}
+.encuesta{
+font-size: 13px;
+font-weight: bold;
+color:#A0A086;
+}
+
+
+form input[type="submit"]{
+  background: #262626;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+}
+
+
+form input[type="submit"]:hover{
+  background: #45B39D;
+}
+

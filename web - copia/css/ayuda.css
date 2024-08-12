@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav {
+  background-color: #A9CF82;
+}
+
+.d-flex {
+  margin: 2px 0px 0px 0px;
+}
+
+.direc {
+  color: black;
+  text-decoration: none;
+}
+
+.bandera, .globo {
+  margin: 15px 0px 0px 0px;
+  color: black;
+}
+
+.pais {
+  text-decoration: none;
+  color: black;
+  margin: 20px 0px 0px 0px;
+}
+
+.carrit {
+  margin: 15px 20px 0px 15px;
+  color: black;
+}
+
+.campan {
+  margin: 15px 0px 0px 10px;
+  color: black;
+}
+
+.persona {
+  margin: 20px 0px 0px 10px;
+  color: black;
+}
+
+.inicio {
+  text-decoration: none;
+  color: black;
+}
+
+.ingresar {
+  margin: 20px 0px 0px 10px;
+}
+
+.regreso {
+  margin: 5px 0px 0px 20px;
+}
+
+.comienzo {
+  text-decoration: none;
+  color: #020202;
+}
+
+.comienzo:hover {
+  color: #85929E;
+}
+
+.tit {
+  
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 0;
+  border-radius: 8px;
+  max-width: 80%; /* Ajusta esto según sea necesario */
+  display: flex;
+  justify-content: left;
+}
+
+.titulo {
+  padding: 10px 20px;
+  font-size: 30px;
+  position: relative;
+}
+
+
+
+.section1 {
+  width: 90%;
+  max-width: 250px;
+  height: 230px;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 40px;
+}
+
+.aside1 {
+  width: 90%;
+  max-width: 500px;
+  height: 300px;
+  background-color: beige;
+  margin: 10px auto;
+  padding: 40px 30px 0px 30px;
+  border-radius: 8px;
+}
+
+.subti {
+  text-align: center;
+}
+
+.main1, .main2 {
+  flex: 1;
+  margin: 25px 0px;
+}
+
+.section2 {
+  width: 90%;
+  max-width: 500px;
+  height: 450px;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 40px;
+}
+
+.aside2 {
+  width: 90%;
+  max-width: 300px;
+  height: 450px;
+  margin: 10px auto;
+  padding: 40px 30px 0px 30px;
+  border-radius: 8px;
+}
+
+.lista {
+  list-style: none;
+  text-align: left;
+}
+
+.text {
+  text-align: left;
+  padding: 20px 5px;
+}
+
+.num2 {
+  padding: 7px 0px;
+}
+
+.pag {
+  background-color: #A9CF82;
+  color: black;
+  text-align: center;
+  padding: 20px 10px;
+  margin: 100px 0px 0px 0px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.personal, .sociales, .maps {
+  display: inline-block;
+  margin-right: 30px;
+  text-align: left;
+}
+
+.termi {
+  margin-top: 20px;
+  color: #666;
+}
+
+.num3 {
+  margin-bottom: 5px;
+}
+
+/* Media Queries para Responsividad */
+@media (min-width: 768px) {
+  .tit {
+    margin: 0px 220px 0px 230px; /* Restablece los márgenes específicos para computadoras */
+  }
+
+  .titulo {
+    padding: 10px 20px;
+    max-width: none; /* Asegura que el título ocupe todo el contenedor en computadoras */
+  }
+
+  .section1 {
+    float: left;
+    margin: 10px 50px 0px 275px;
+  }
+
+  .aside1 {
+    float: right;
+    margin: 10px 250px 0px 0px;
+  }
+
+  .section2 {
+    float: left;
+    margin: 10px 0px 0px 275px;
+  }
+
+  .aside2 {
+    float: right;
+    margin: 10px 250px 0px 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tit {
+    max-width: 100%; /* Ajusta el contenedor al ancho de la pantalla */
+  }
+
+  .section1 {
+    margin-bottom: 20px;
+    margin: 5px 90px;
+  }
+
+  .aside1 {
+    margin-top: 100px;
+  }
+}

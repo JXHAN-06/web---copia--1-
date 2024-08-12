@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+  
+  
+  }
+ 
+  
+  nav{
+    background-color:  #A9CF82;
+  }
+  .d-flex{
+    
+      margin: 2px 0px 0px 0px ;
+    
+  }
+  .direc{
+    color: black;
+    text-decoration: none;
+    
+   
+  }
+  .bandera, .globo{
+    margin: 15px 0px 0px 0px ;
+    color: black;
+  }
+  .pais{
+   text-decoration: none;
+   color: black;
+   margin:  20px 0px 0px 0px;
+   
+  }
+  .carrit{
+    margin: 15px 20px 0px 15px ; 
+    color: black;
+  
+  }
+  .campan{
+    margin: 15px 0px 0px 10px ; 
+    color: black;
+  }
+  
+  .regreso {
+    margin: 5px 0px 0px 20px;
+  }
+  .comienzo {
+    text-decoration: none;
+    color: #020202;
+  }
+  
+  .comienzo:hover {
+    color: #85929E;
+  }
+  
+  .tarjetas{
+    display: flex;
+    text-align: right;
+    padding: 10px;
+  }
+  .tarje{
+    width: 90%; 
+    max-width: 1200px; /* Limita el ancho máximo para que no se extienda demasiado en pantallas grandes */
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajustado para adaptarse mejor a diferentes tamaños de pantalla */
+    grid-gap: 10px;
+  }
+  .card-img-top{
+    width: 30px;
+    height: 500px;
+    }
+    
+    .tablas {
+      list-style-type: none;
+      margin: 0;
+      padding: 0px 0px 10px 0px;
+      overflow: hidden;
+      background-color: #fff;
+      display: flex; /* Cambiamos a flexbox para alinear elementos */
+      justify-content: center; 
+     
+    }
+    
+    .tablas li {
+      margin: 0 10px; /* Espacio entre elementos */
+      
+    }
+    
+    .tablas li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    .tablas li a:hover {
+      background-color: #111;
+    }
+    .favorit{
+      text-decoration: none;
+      color: #fff; /* Color de texto */
+      padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+      border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+      border-radius: 5px; /* Bordes redondeados */
+      justify-content: center;
+      text-align: center;
+      background-color: #A9CF82;
+    
+    }
+    
+    
+    .report{
+      text-decoration: none;
+      color: #fff; /* Color de texto */
+      padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+      border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+      border-radius: 5px; /* Bordes redondeados */
+      justify-content: center;
+      text-align: center;
+      background-color: #A9CF82;
+    
+    }
+    
+    
+    .ofert{
+      text-decoration: none;
+      color: #fff; /* Color de texto */
+      padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+      border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+      border-radius: 5px; /* Bordes redondeados */
+      justify-content: center;
+      text-align: center;
+      background-color: #A9CF82;
+    }
+    .ayud{
+      text-decoration: none;
+      color: #fff; /* Color de texto */
+      padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+      border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+      border-radius: 5px; /* Bordes redondeados */
+      justify-content: center;
+      text-align: center;
+      background-color: #A9CF82;
+    }
+    
+    .pagos{
+    
+      text-decoration: none;
+      color: #fff; /* Color de texto */
+      padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+      border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+      border-radius: 5px; /* Bordes redondeados */
+      justify-content: center;
+      text-align: center;
+      background-color: #A9CF82;
+    }
+    @media screen and (max-width: 600px) {
+      .tablas {
+        flex-direction:initial ; /* Cambiamos a columna para móviles */
+        align-items: center; /* Centramos los elementos en móviles */
+      }
+      .tablas li {
+        margin: 5px 5px; /* Espacio entre elementos en móviles */
+      }
+     
+    }
+    

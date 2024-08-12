@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+  
+  
+  }
+ 
+  body{
+    background-color: white;
+  }
+  nav{
+    background-color:  #A9CF82;
+  }
+  .d-flex{
+    
+      margin: 2px 0px 0px 0px ;
+    
+  }
+  .direc{
+    color: black;
+    text-decoration: none;
+    
+   
+  }
+  .bandera, .globo{
+    margin: 15px 0px 0px 0px ;
+    color: black;
+  }
+  .pais{
+   text-decoration: none;
+   color: black;
+   margin:  20px 0px 0px 0px;
+   
+  }
+  .carrit{
+    margin: 15px 20px 0px 15px ; 
+    color: black;
+  
+  }
+  .campan{
+    margin: 15px 0px 0px 10px ; 
+    color: black;
+  }
+  .persona{
+    margin: 20px 0px 0px 10px ; 
+    color: black;
+  }
+  .inicio{
+    text-decoration: none; 
+    color: black;
+  }
+  .ingresar{
+    margin: 20px 0px 0px 10px ; 
+  }
+  
+  .tablas {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0px 10px 0px;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex; /* Cambiamos a flexbox para alinear elementos */
+    justify-content: center; 
+   
+  }
+  
+  .tablas li {
+    margin: 0 10px; /* Espacio entre elementos */
+    
+  }
+  
+  .tablas li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .tablas li a:hover {
+    background-color: #111;
+  }
+  .favorit{
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  
+  }
+  
+  
+  .report{
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  
+  }
+  
+  
+  .ofert{
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  }
+  .ayud{
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  }
+  
+  .pagos{
+  
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  }
+  @media screen and (max-width: 600px) {
+    .tablas {
+      flex-direction:initial ; /* Cambiamos a columna para móviles */
+      align-items: center; /* Centramos los elementos en móviles */
+    }
+    .tablas li {
+      margin: 5px 5px; /* Espacio entre elementos en móviles */
+    }
+   
+  }
+  .card-img-top{
+  width: 30px;
+  height: 250px;
+  }
+  .swiper-slide{
+    padding: 0px 15px 0px 15px;
+  }
+  .datos{
+    margin: auto;
+    text-align: center;
+    border-radius: 8px;
+    }
+    footer {
+      background-color: #A9CF82;
+      color: black;
+      padding: 30px 0;
+      text-align: left;
+    }
+    
+    .pie {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      
+    }
+    
+    .pie ul {
+      list-style-type: none;
+      margin-bottom: 20px;
+    }
+    
+    .pie ul li {
+      margin-bottom: 10px;
+    }
+    
+    .termi {
+      margin-top: 20px;
+    }
+    
+    .termi small {
+      color: black;
+    }
+    
+    .termi small a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .termi small a:hover {
+      text-decoration: underline;
+    }
+  .card-body{
+    background-color:#DEB887;
+  }
+ .conta-img{
+  position: relative;
+  text-align: center;
+  color: white;
+ }
+ .centered {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: black;
+  margin: 20px 0px 0px 80px;
+}
+.msinfo{
+  font-weight: bold;
+  font-size: 50px;
+  margin: 0px 0px 50px 0px ;
+}
+.bot-info{
+  text-decoration: none;
+  background-color: #A9CF82;
+  color: #fff;
+  padding: 5px 10px 5px 10px;
+  border-radius: 14px;
+  font-weight: bold;
+}

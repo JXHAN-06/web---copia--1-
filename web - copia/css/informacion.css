@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+  
+  
+  }
+ 
+  body{
+    background-color: white;
+  }
+  nav{
+    background-color:  #A9CF82;
+  }
+  .d-flex{
+    
+      margin: 2px 0px 0px 0px ;
+    
+  }
+  .direc{
+    color: black;
+    text-decoration: none;
+    
+   
+  }
+  .bandera, .globo{
+    margin: 15px 0px 0px 0px ;
+    color: black;
+  }
+  .pais{
+   text-decoration: none;
+   color: black;
+   margin:  20px 0px 0px 0px;
+   
+  }
+  .carrit{
+    margin: 15px 20px 0px 15px ; 
+    color: black;
+  
+  }
+  .campan{
+    margin: 15px 0px 0px 10px ; 
+    color: black;
+  }
+  .persona{
+    margin: 20px 0px 0px 10px ; 
+    color: black;
+  }
+  .inicio{
+    text-decoration: none; 
+    color: black;
+  }
+  .ingresar{
+    margin: 20px 0px 0px 10px ; 
+  }
+  
+  .tablas {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0px 10px 0px;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex; /* Cambiamos a flexbox para alinear elementos */
+    justify-content: center; 
+   
+  }
+  
+  .tablas li {
+    margin: 0 10px; /* Espacio entre elementos */
+    
+  }
+  
+  .tablas li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .tablas li a:hover {
+    background-color: #111;
+  }
+  .favorit{
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  
+  }
+  
+  
+  .report{
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  
+  }
+  
+  
+  .ofert{
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  }
+  .ayud{
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  }
+  
+  .pagos{
+  
+    text-decoration: none;
+    color: #fff; /* Color de texto */
+    padding: 5px 10px; /* Ajusta el espacio interno según tu diseño */
+    border: 1px solid #A9CF82; /* Borde alrededor de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    justify-content: center;
+    text-align: center;
+    background-color: #A9CF82;
+  }
+  @media screen and (max-width: 600px) {
+    .tablas {
+      flex-direction:initial ; /* Cambiamos a columna para móviles */
+      align-items: center; /* Centramos los elementos en móviles */
+    }
+    .tablas li {
+      margin: 5px 5px; /* Espacio entre elementos en móviles */
+    }
+   
+  }
+  .regreso{
+    margin: 5px 0px 0px 15px;
+ }
+ .comienzo{
+    text-decoration: none;
+    color: #020202;
+    
+    
+
+ }
+
+ .comienzo:hover{
+    color: #85929E;
+ }
+ .section1{
+    
+    display: flex;
+    float: right;
+    max-width: 250px;
+    height: 260px;
+    margin: 63px 290px 0px 0px;
+    
+    text-align: center;
+    border-radius: 40px;
+  }
+  
+  .aside1{
+   
+    float: left;
+   
+    margin: 10px auto;
+    padding: 40px 0px 0px 0px;
+    border-radius: 8px;
+  }
+  
+  .tex-info{
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 35px ;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .contenido1{
+    margin:40px 550px 10px 5px;
+  }
+  .pregun{
+    padding: 0px 0px 0px 30px ;
+   font-weight: bold;
+   color:#A9CF82;
+    font-size: 35px;
+  }
+  .main1{
+    margin: 0px 0px 0px 0px;
+  }
+  .aside2 {
+    float: left;
+ 
+    margin: 150px 284px 10px 50px;
+    padding: 0px 0px 0px 1px;
+    border-radius: 8px;
+  
+  }
+   .section2{
+    display: flex;
+    float: right;
+    max-width: 250px;
+    height: 260px;
+    margin: -350px 420px 0px 0px;
+    
+    text-align: center;
+    border-radius: 40px;
+   }
+  .expli-video{
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 35px ;
+    font-weight: bold;
+    font-size: 40px; 
+    text-align: center;
+    color: #A9CF82;
+    
+  }
+  .video-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.video-container iframe {
+    width: 640px;
+    height:  480px;
+    margin: 10px 0px 0px 0px;
+    border-radius: 10px;
+}
+  .credits {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+.credits a {
+    color: #0066cc;
+    text-decoration: none;
+}
+.credits a:hover {
+    text-decoration: underline;
+}
+
+  
+  .pagin{
+    background-color: #A9CF82;
+    color: black;
+    text-align: center;
+    padding: 20px 10px 10px 0px ;
+    margin: 1000px 0px 0px 0px;
+  }
+  
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .personal, .sociales, .maps {
+    display: inline-block;
+    margin-right: 50px;
+    text-align: left;
+  }
+  
+  .termi {
+    margin-top: 20px;
+    color: #666;
+  }
+  
+  .num3 {
+    margin-bottom: 5px;
+  }
+  

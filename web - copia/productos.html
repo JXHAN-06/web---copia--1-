@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="es" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioGreen: Tu eliges cuidar al planeta</title>
+  <link rel="stylesheet" href="css/productos.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+      .product-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            max-width: 300px;
+            margin: auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #DEB887;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           
+        }
+
+        .image-container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #DCE5EB;
+        }
+
+        .card-body {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .pagination {
+          padding: 0px 47vw;
+          background-color: #fff;
+          margin-top: 20px;
+        }
+        
+       
+        .page-item .page-link{
+         background-color:#666;
+         color: #fff;
+         
+        } 
+        .page.active {
+          background-color: #4CAF50; /* El color que prefieras para la página activa */
+          color: white;
+         border: 1px solid #4CAF50;
+        }
+        .page-link:hover:not(.active) {
+         background-color: #ddd;
+        }
+
+        
+        .btn:hover {
+            background-color: black;
+            border: black;
+        }
+
+       
+
+        .spinner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .star-rating {
+            display: flex;
+            margin: 0vh 34vw 0vh 0vw ;
+            direction: rtl;
+            font-size: 1.5rem;
+            unicode-bidi: bidi-override;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            cursor: pointer;
+            color:#5D6D7E rgb( 93, 109, 126)
+        }
+        .star-rating label:hover, .star-rating label:hover ~ label {
+            color: #f0ad4e;
+        }
+        .star-rating input:checked ~ label {
+            color: #f0ad4e;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #666;
+        }
+        .card{
+          background-color: #f5f5dc;
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .card img{
+          width: 35vw;
+          height: 70vh;
+          display: flex;
+          float: left;
+          margin: 5vh 0vw -5vh 1vw;
+          padding: -100vh 0vw 200vh 1vw;
+        }
+        .info-product{
+         display: block;
+          text-align: center;
+          margin: -65vh 0px 10vh 35vw ;
+
+        }
+        .raya{
+          width: 40vw;
+          margin: 0vh 0px 0vh 5vw ;
+
+        }
+        .info-product .titulo{
+          margin: 0vh 0px 0vh -10vw ;
+        }
+        .califica{
+          font-size: 20px;
+          text-decoration: underline;
+          margin: -5vh 0px 0vh -15vw ;
+          color: #666;
+        }
+        .descripcion{
+          margin: 3px 0px 0vh 5vw ;
+          text-align: left;
+        }
+        
+        .product-container {
+          display: flex;
+          align-items: center;
+          background: white;
+          border-radius: 8px;
+          
+          
+
+        }
+        .pagar{
+          margin: 20px 700px 5px 70px ;
+          
+        }
+
+        .product-info {
+          flex-grow: 1;
+          text-align: center;
+          align-items: center;
+        }
+
+        
+        .quantity-btn {
+          background-color:  #007bff;
+          color: white;
+          border: none;
+          padding: 5px 10px;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 18px;
+          margin: 0 10px;
+         }
+         .quantity-btn:hover {
+           background-color: #0056b3;
+         }
+        .precios{
+          margin: 2vh 0px 0vh -30vw ;
+          color: #25d366;
+          font-weight: bold;
+        }
+        .cierre{
+         text-decoration: none;
+         background-color:  #007bff;
+         border: #007bff;
+         border-radius: 5px;
+         padding: 8px;
+         color: #fff;
+         margin: 1vh 15vw 0vh 0vw ;
+        }
+        .cierre:hover {
+            background-color: black;
+            border: black;
+        }
+        .seleccion{
+         text-decoration: none;
+         background-color:  #ffa500;
+         padding: 12px 30px;
+         margin: 10px 10px;
+         color: #fff;
+         border-radius: 4px;
+         font-size: 16px;
+         position: relative;
+         display: inline-flex;
+         width: auto;
+         transition: all .3s;
+         align-items: center;
+         box-shadow: 0 2px 2px 0px rgba(45, 62, 79, .3)
+        }
+        .seleccion2{
+         padding: 12px 30px;
+         background: #25d366;
+         border-radius: 5px;
+         color: #ffffff;
+         font-size: 16px;
+         position: relative;
+         display: inline-flex;
+         width: auto;
+         transition: all .3s;
+         align-items: center;
+         box-shadow: 0 2px 2px 0px rgba(45, 62, 79, .3)
+        }
+        .seleccion:hover, .seleccion2:hover{
+          background-color: #DCE5EB;
+          border: #DCE5EB;
+        }
+        .pedir{
+        
+          list-style-type: none;
+          margin:-60px 10px 0px 10px ;
+
+        }
+        .pedir2{
+          margin:10px 250px 0px 10px ;
+          list-style-type: none;
+        }
+       
+      
+       .produc{
+        display: flex;
+        float: left;
+        width: 35%;
+        text-align: left;
+        padding: 0px 0px 50px 30px ;
+        background-color:#f5f5dc;
+        margin: 0px 0px 0px 110px;
+        border-radius: 5px;
+       }
+       .produc2{
+        display: flex;
+        float: right;
+        width: 48%;
+        text-align: left;
+        padding: 0px 0px 199px 30px ;
+        background-color:#f5f5dc;
+        margin: 0px 110px 0px 0px;
+        border-radius: 5px;
+       
+       }
+      .subpro, .subpro2{
+        margin: 20px 0px 0px 0px;
+      }
+       .parrafo{
+        padding: 2vh 0vw 0vh 0vw;
+        text-align: left;
+        font-size: 13px;
+      }
+      .texinfo{
+        padding: 0vh 0vw 0vh 0vw;
+      }
+    .todinfo{
+      text-align: left;
+    }
+
+    .pag {
+      background-color: #A9CF82;
+      color: black;
+      text-align: center;
+      padding: 20px 10px 10px 0px ;
+      margin: 700px 0px 0px 0px;
+    }
+    .pagin{
+      background-color: #A9CF82;
+      color: black;
+      text-align: center;
+      padding: 20px 10px 10px 0px ;
+      margin: 100px 0px 0px 0px;
+    }
+    
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .personal, .sociales, .maps {
+      display: inline-block;
+      margin-right: 50px;
+      text-align: left;
+    }
+    
+    .termi {
+      margin-top: 20px;
+      color: #666;
+    }
+    
+    .num3 {
+      margin-bottom: 5px;
+    }
+    
+    
+</style>
+</head>
+
+<body >
+
+    
+    <nav class="navbar navbar-expand-md">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="imagenes/LrjBEAWSNgta1--CCWsp2-transformed.png"  width="125"
+            >
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: black;">
+          <span class="navbar-toggler-icon" style="background-color: black;"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <search>
+            <form class="d-flex" role="search">
+              <div class="input-group flex-nowrap">
+                <label class="input-group-text" id="addon-wrapping" for="searchInput">🔍</label>
+                <input type="search" class="form-control" placeholder="Buscar" aria-label="Search"
+                  aria-describedby="addon-wrapping" id="searchInput">
+              </div>
+            </form>
+          </search>
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+           <li class="nav-item dropdown">
+            <li>
+
+              <a class="nav-link " href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="25" fill="currentColor" class="bandera" viewBox="0 0 16 16">
+                  <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001"/>
+                </svg> 
+              </a>
+            </li>
+              <li>
+                <a class="direc dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <b>Entregar a: 
+                          <br>DIRECCIÓN ESPECIFICA</b>
+                </a> 
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Documentos visuales</a></li>
+                  <li><a class="dropdown-item" href="#">Suite Visual</a></li>
+                  
+                    <hr class="dropdown-divider">
+                  
+                  <li><a class="dropdown-item" href="#">Fotos y vídeos</a></li>
+                </ul>
+              </li>
+              
+            <li class="nav-item dropdown">
+              <li>
+                <a class="nav-link " href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="globo" viewBox="0 0 16 16">
+                    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                  </svg>
+                </a>
+              </li>
+                
+                  <a class=" pais dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <b>Español-PE</b>
+                  </a> 
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Documentos visuales</a></li>
+                <li><a class="dropdown-item" href="#">Suite Visual</a></li>
+                
+                  <hr class="dropdown-divider">
+                
+                <li><a class="dropdown-item" href="#">Fotos y vídeos</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="carrit" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                </svg>
+              </a>
+             
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" fill="currentColor" class="campan" viewBox="0 0 16 16">
+                  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"/>
+                </svg>
+              </a>
+              
+            </li>
+            
+         
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+ 
+    <br>
+  
+    <div class="regreso">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
+        </svg>
+      <a class="comienzo" href="index.html">INICIO</a>
+    </div>
+    
+    <main class="container mt-4">
+      
+      
+          <h3>NUESTROS PRODUCTOS</h3>
+         <div id="product-list" class="row row-cols-1 row-cols-md-3 g-4"></div>
+          <nav aria-label="Page navigation">
+            <ul class="pagination"></ul>
+          </nav>
+       
+
+    </main>
+    <div id="product-list" class="row "></div>
+        <div class="page">
+            <ul id="pagination" class="pagination"></ul>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      const products = [
+          { src: "imagenes produc/bandeja-3.jpg", title2: "Bandeja",title:"Bandeja de cartón con tapa transparente" ,breve:"Esta bandeja de cartón con tapa transparente es ideal para transportar y presentar alimentos de manera segura y atractiva.", price: "Esta bandeja de cartón con tapa transparente es perfecta para transportar  y presentar alimentos de manera segura y atractiva. Ideal para establecimientos <br> de comida para llevar, caterings y eventos, la bandeja está diseñada para mantener la frescura y calidad de los alimentos.", stock: "S/12.50",id:1},
+          { src: "imagenes/bolsa-3.jpg",title2: "Bolsa", title: "Bolsa de papel kraft con asas de cuerda",breve: "Esta bolsa de papel kraft con asas de cuerda es perfecta para empaquetar regalos de manera elegante y eco-friendly", price: "Ideal para regalos y presentaciones elegantes, esta bolsa de papel kraft   ofrece una solución  eco-friendly y resistente para cualquier ocasión.  Las asas de cuerda le añaden un toque sofisticado y   aseguran un transporte  cómodo y seguro,  esta bolsa es una opción versátil. ", stock: "S/12.50",id:2 },
+          { src: "imagenes/cubiertos3.jpg", title2: "Cubiertos",title:"Cubiertos de madera son biodegradables",breve:" Cubiertos de madera desechables, ideales para eventos y comidas para llevar, hechos de materiales sostenibles y respetuosos con el medio ambiente.", price: "Perfectos para eventos, picnics, y  catering,  estos cubiertos de madera <br> desechables ofrecen una alternativa ecológica  a los cubiertos de plástico. Hechos de madera sostenible, estos utensilios son biodegradables y compostables. ", stock: "$10.00", id:3 },
+          { src: "imagenes/sorbetes-3.jpg", title2: "Sorbetes",title:"Sorbetes de madera son biodegradables",breve:"Sorbetes de madera desechables, ideales para bebidas frías y calientes, hechos de materiales sostenibles y respetuosos con el medio ambiente.", price: "Opta por una alternativa eco-friendly con estos sorbetes de madera desechables. Perfectos para bebidas frías y calientes, estos sorbetes biodegradables son ideales para eventos, restaurantes y uso diario, hechos de madera sostenible.", stock: "$10.00",id:4 },
+          { src: "imagenes/taper-3.jpg", title2: "Taper",title:"Tupper  reutilizable con tapa hermética",breve:"Tupper de plástico reutilizable con tapa hermética, ideal para almacenar y transportar alimentos de manera segura y conveniente.", price: "Mantén tus alimentos frescos y bien almacenados con este tupper de plástico reutilizable. Ideal para llevar comidas al trabajo, escuela o para almacenar sobras en casa. Su tapa hermética asegura que los contenidos se mantengan frescos y evita derrames.", stock: "$10.00",id:5 },
+          { src: "imagenes/vaso-3.jpg", title2: "Vaso",title:"Vaso reutilizable y para cualquier ambiente",breve:"Vaso reutilizable de plástico, ideal para bebidas frías y calientes, duradero y apto para lavavajillas y microondas.", price: "Este vaso reutilizable de plástico es perfecto para cualquier ocasión, ya sea para usar en casa, en la oficina, o para llevar a eventos y picnics. Fabricado con plástico libre de BPA, es seguro para usar con bebidas frías y calientes, y su diseño robusto asegura una larga durabilidad.", stock: "$10.00",id:6 },
+          { src: "imagenes/cepillos2.jpg", title2: "Cepillo",title:"Cepillo de dientes de madera biodegradable",breve:"Cepillo de dientes de madera biodegradable, con cerdas suaves y de origen vegetal, ideal para una limpieza bucal efectiva y respetuosa con el medio ambiente.", price: "Cuida de tu higiene bucal y del  medio ambiente con este cepillo de dientes de madera biodegradable.  Sus cerdas suaves  y de origen vegetal son perfectas para una limpieza efectiva sin dañar  el esmalte ni las encías. El mango de madera  ergonómico proporciona un agarre cómodo y seguro. ", stock: "$10.00",id:7 },
+          { src: "imagenes produc/cajmimbre.jpg", title2: "Caja de Mimbre",title:"Caja de mimbre artesanal y a la vez rustico",breve:" Caja de mimbre artesanal, ideal para almacenar y organizar, hecha a mano con materiales naturales, perfecta para añadir un toque rústico a tu hogar.", price: "Añade un toque rústico y elegante a tu hogar  con esta caja de mimbre artesanal. Ideal para almacenar y organizar tus pertenencias,  esta  caja combina funcionalidad y estilo, siendo perfecta  para cualquier habitación. Hecha a mano con mimbre   natural y respetuosa con el medio ambiente.", stock: "$10.00",id:8 },
+          { src: "imagenes produc/escoba2.jpg", title2: "Escoba",title:"Escoba de paja tradicional y resistente",breve:" Escoba de paja tradicional hecha a mano, ideal para barrer interiores y exteriores, fabricada con materiales naturales para una limpieza efectiva y ecológica.", price: " Esta escoba de paja tradicional es perfecta para barrer tanto interiores como exteriores. Hecha a mano con materiales naturales, es duradera y efectiva para limpiar todo tipo de superficies.  Su diseño ergonómico facilita el  barrido   y <br>ofrece un agarre cómodo.", stock: "$10.00",id:9 },
+          { src: "imagenes produc/Esterapaja2.jpg", title2: "Estera de Paja",title:"Estera de Paja - Para Interior y Exterior",breve:"Estera de paja tradicional, hecha a mano con materiales naturales. Ideal para una variedad de aplicaciones tanto en interiores como en exteriores, combinando durabilidad y una estética ecológica.", price: "Esta estera de paja tradicional es una opción natural y eficiente para una amplia variedad de aplicaciones. Fabricada a mano con paja de alta calidad, <br> proporciona una superficie duradera y resistente. Ideal para uso tanto en interiores como en exteriores. ", stock: "$10.00",id:10 },
+          { src: "imagenes produc/portavasos-2.jpg", title2: "Portavasos",title:"Portavasos Reutilizable - Elegancia Natural",breve:"Portavasos reutilizable de madera, hecho a mano para proteger tus superficies con elegancia. Ideal para agregar un toque natural y sofisticado a cualquier ambiente, combinando funcionalidad con estilo atemporal.", price: "Este portavasos reutilizable de madera combina la belleza natural con una  funcionalidad excepcional. Hecho a mano con madera de alta calidad, ofrece  <br> una protección  elegante para tus superficies mientras añades un toque de sofisticación a tu mesa.", stock: "$10.00",id:11 },
+          { src: "imagenes produc/tazones2.jpg", title2: "Tazones",title:"Tazones - Naturalidad en Cada Comida",breve:"Tazones de madera artesanales que combinan elegancia y funcionalidad. Perfectos para servir comidas y bebidas con un toque de sofisticación natural, hechos a mano para una calidad excepcional.", price: "Estos tazones de madera artesanales ofrecen una mezcla perfecta de belleza natural y funcionalidad. Cada tazón es único y presenta un acabado suave y pulido. Perfectos para servir una variedad de comidas y bebidas, estos tazones aportan un toque de sofisticación rústica a tu mesa. ", stock: "$10.00",id:12 },
+        
+      ];
+      
+        
+      const itemsPerPage = 6;
+        let currentPage = 1;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            renderPagination();
+        });
+
+        function renderProducts() {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const visibleProducts = products.slice(startIndex, endIndex);
+
+            visibleProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'col';
+                productCard.innerHTML = `
+                    
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="${product.src}"   alt="${product.title}">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">${product.title2}</h5>
+                        <p class="card-text product-description">${product.stock}</p>
+                        <p class="card-text">${product.breve}</p>
+                        
+                        <button class="btn btn-primary" onclick="viewProduct(${product.id})">Ver producto</button>
+                    </div>
+                </div>
+                
+            
+                `;
+                productList.appendChild(productCard);
+            });
+        }
+
+        function renderPagination() {
+            const paginationList = document.getElementById('pagination');
+            paginationList.innerHTML = '';
+
+            const totalPages = Math.ceil(products.length / itemsPerPage);
+            for (let i = 1; i <= totalPages; i++) {
+                const paginationItem = document.createElement('li');
+                paginationItem.className = 'page-item';
+                paginationItem.innerHTML = `
+                    <a class="page-link" href="#" data-page="${i}">${i}</a>
+
+                    
+                `;
+                
+                paginationItem.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    renderProducts();
+                    renderPagination();
+                });
+                
+                paginationList.appendChild(paginationItem);
+                
+            }
+            
+             
+
+          
+        }
+        
+
+       
+        
+
+        function viewProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                const productDetail = document.createElement('div');
+                productDetail.innerHTML = `
+                 <header>
+    
+    <nav class="navbar navbar-expand-md">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="imagenes/LrjBEAWSNgta1--CCWsp2-transformed.png"  width="125"
+            >
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: black;">
+          <span class="navbar-toggler-icon" style="background-color: black;"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <search>
+            <form class="d-flex" role="search">
+              <div class="input-group flex-nowrap">
+                <label class="input-group-text" id="addon-wrapping" for="searchInput">🔍</label>
+                <input type="search" class="form-control" placeholder="Buscar" aria-label="Search"
+                  aria-describedby="addon-wrapping" id="searchInput">
+              </div>
+            </form>
+          </search>
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+           <li class="nav-item dropdown">
+            <li>
+
+              <a class="nav-link " href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="25" fill="currentColor" class="bandera" viewBox="0 0 16 16">
+                  <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001"/>
+                </svg> 
+              </a>
+            </li>
+              <li>
+                <a class="direc dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <b>Entregar a: 
+                          <br>DIRECCIÓN ESPECIFICA</b>
+                </a> 
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Documentos visuales</a></li>
+                  <li><a class="dropdown-item" href="#">Suite Visual</a></li>
+                  
+                    <hr class="dropdown-divider">
+                  
+                  <li><a class="dropdown-item" href="#">Fotos y vídeos</a></li>
+                </ul>
+              </li>
+              
+            <li class="nav-item dropdown">
+              <li>
+                <a class="nav-link " href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="globo" viewBox="0 0 16 16">
+                    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                  </svg>
+                </a>
+              </li>
+                
+                  <a class=" pais dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <b>Español-PE</b>
+                  </a> 
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Documentos visuales</a></li>
+                <li><a class="dropdown-item" href="#">Suite Visual</a></li>
+                
+                  <hr class="dropdown-divider">
+                
+                <li><a class="dropdown-item" href="#">Fotos y vídeos</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="carrit" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                </svg>
+              </a>
+             
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" fill="currentColor" class="campan" viewBox="0 0 16 16">
+                  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"/>
+                </svg>
+              </a>
+              
+            </li>
+            
+         
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+
+   <div>
+    <br>
+    <ul class="tablas">
+
+              <li> 
+               <a  class =favorit href="carrito.html">Favoritos</a> 
+              </li>
+              
+              <li>
+                <a class ="ofert" href="productos.html">Ofertas</a> 
+                </li>
+              <li> 
+                <a class ="ayud" href="ayuda.html">Ayuda</a>
+              </li>
+              <li> 
+               <a class ="pagos" href="pagos.html">Pagos</a> 
+              </li>
+    </ul>
+  </div>
+  
+ 
+                    <div class="container my-5 ">
+                        <div class="card">
+                            <img src="${product.src}" class="card-img-top" alt="${product.title}">
+                            <div class="info-product">
+                                <h5 class="titulo">${product.title}</h5>
+                                 <div class="star-rating" data-id="${product.id}">
+                                    ${[...Array(5)].map((_, i) => `
+                                        <input type="radio" id="star${5 - i}-${product.id}" name="rating-${product.id}" value="${5 - i}">
+                                        <label for="star${5 - i}-${product.id}">☆</label> 
+                                    `).join('')}
+                                </div>
+                                 <p class="califica">calificar</p>
+                                <div class="raya">
+                                  <hr>
+                                </div>
+                                <p class="descripcion">${product.price}</p>
+                                <p class="precios"> ${product.stock}</p>
+                                
+                                <div class="pagar">
+                                  <div class="product-container">
+                                    <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                                    <div class="product-info">
+                                  
+                                  <p>0</p>
+                                  
+                                    </div>
+                                    <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                                  </div>
+                                </div>
+                                 <div class="opciones">
+                                   <ul>
+                                     <li class="pedir"><a href="" class="seleccion"> AGREGAR AL CARRO</a></li>
+                                     <li  class="pedir2"><a href="" class="seleccion2">  Pidelo por WhatsApp</a></li>
+                                   </ul>
+                                 </div>
+                                
+                                <button class="cierre cierre-primary" onclick="closeProduct()">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <main>
+                       <div class="secpar">
+                         <section class="produc">
+                            <div class="todinfo">
+                              <div class="subpro">Especificaciones</div>
+                               <div class="separacion">
+                                 <hr >
+                               </div>
+                                <div class="texinfo">
+                                  <p class="parrafo"> Material: Fibra de bambú y almidón de maíz (u otros<br>  materiales biodegradables).<br>Dimensiones: Varían según el tamaño del tazón, <br>generalmente disponibles en diferentes diámetros y alturas.<br>Capacidad: Depende del tamaño del tazón, desde<br> pequeñas porciones individuales hasta tamaños más <br>grandes para ensaladas o platos principales. <br>Color: Pueden estar disponibles en una variedad de colores<br> naturales o teñidos con tintes vegetales.<br>
+                                   calor: Apto para alimentos fríos y calientes, generalmente <br>resistente al calor hasta cierta temperatura (por ejemplo,<br> hasta 120°C).<br>Biodegradabilidad: Totalmente biodegradable al final de su <br> vida útil,descomponiéndose de manera segura en  <br>condiciones naturales.<br>Certificaciones: Pueden estar certificados por organismos <br> reconocidos por su cumplimiento con estándares de  <br>sostenibilidad y biodegradabilidad. <br>Embalaje: En algunos casos, también se ofrecen opciones <br> de embalaje biodegradable <br> o compostable para minimizar el impacto ambiental. <br>Estas especificaciones pueden variar según el fabricante <br> y el diseño específico del tazón biodegradable.</p>
+                                </div>
+                            </div>
+                         </section>
+                         <aside class="produc2">
+                         
+                           <div class="todinfo2">
+                             <div class="subpro2">informacion adicional </div>
+                             <div class="separacion2">
+                                 <hr >
+                               </div>
+                             <ol>
+                               <li>Beneficios ambientales: Los tazones biodegradables ayudan  a <br>reducir la dependencia de plásticos y otros materiales no<br> biodegradables, lo que contribuye a la conservación de los <br>recursos naturales y la mitigación de la contaminación<br> ambiental.</li>
+                               <li>Seguridad alimentaria: Estos tazones están diseñados para ser<br> seguros para el contacto con alimentos, sin la liberación de <br>productos químicos nocivos que puedan contaminar los<br> alimentos.</li>
+                               <li>Versatilidad de uso: Son adecuados para una variedad de<br> aplicaciones, desde servir comidas calientes hasta ensaladas y<br> postres, tanto en entornos domésticos como comerciales, como<br> restaurantes, cafeterías y eventos al aire libre.</li>
+                             </ol>
+                           </div>
+                         </aside>
+                       </div>
+                    </main>
+
+                   <br>
+                    <footer class="pag">
+                      <div class="pie">
+                         <ul class="personal">
+                            <b>
+                             <li class="num3">Contacto:</li>
+                             <li class="num3">Correo electrónico: info@tudominio.com</li>
+                             <li class="num3">Teléfono: +123456789</li>
+                             <li class="num3">Dirección: 123 calle principal</li>
+                         </ul>
+                         <ul class="sociales">
+                             <li class="app">Redes Sociales:</li>
+                             <li class="num3">Bio Green</li>
+                             <li class="num3">@BiogreenTweets</li>
+                             <li class="num3">@Biogreenistragam</li>
+                             <li class="num3">Biogreenfacebook</li>
+                         </ul>
+                         <ul class="maps">
+                             <li class="sit">Mapa del Sitio:</li>
+                             <li class="num3">Inicio</li>
+                             <li class="num3">Sobre Nosotros</li>
+                             <li class="num3">Productos</li>
+                             <li class="num3">Contacto</li>
+                         </ul>
+                           <div class="termi">
+                             <small><b>© 2024 Tu Empresa Imaginaria. Todos los derechos reservados. <br>
+                               Política de Privacidad | Términos de Servicio</b></small>
+                           </div>
+                         </b>
+                      </div>
+                    </footer>
+      
+                    
+                `;
+                document.body.innerHTML = '';
+                document.body.appendChild(productDetail);
+            }
+        }
+
+        function closeProduct() {
+            location.reload();
+        }
+
+        function changeQuantity(amount) {
+    const productInfo = document.querySelector('.product-info');
+    let quantityText = productInfo.querySelector('p');
+    
+    if (!quantityText) {
+        quantityText = document.createElement('p');
+        productInfo.appendChild(quantityText);
+    }
+
+    let quantity = parseInt(quantityText.textContent.replace(/\D/g, '')) || 0;
+    quantity += amount;
+    
+    if (quantity < 0) quantity = 0;
+    
+    quantityText.textContent = ` ${quantity}`;
+}
+    </script>
+
+
+
+<footer class="pagin">
+  <div class="pie">
+     <ul class="personal">
+        <b>
+         <li class="num3">Contacto:</li>
+         <li class="num3">Correo electrónico: info@tudominio.com</li>
+         <li class="num3">Teléfono: +123456789</li>
+         <li class="num3">Dirección: 123 calle principal</li>
+     </ul>
+     <ul class="sociales">
+         <li class="app">Redes Sociales:</li>
+         <li class="num3">Bio Green</li>
+         <li class="num3">@BiogreenTweets</li>
+         <li class="num3">@Biogreenistragam</li>
+         <li class="num3">Biogreenfacebook</li>
+     </ul>
+     <ul class="maps">
+         <li class="sit">Mapa del Sitio:</li>
+         <li class="num3">Inicio</li>
+         <li class="num3">Sobre Nosotros</li>
+         <li class="num3">Productos</li>
+         <li class="num3">Contacto</li>
+     </ul>
+       <div class="termi">
+         <small><b>© 2024 Tu Empresa Imaginaria. Todos los derechos reservados. <br>
+           Política de Privacidad | Términos de Servicio</b></small>
+       </div>
+     </b>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+ 
+  
+    
+</body>
+        
